@@ -26,10 +26,18 @@ class Route{
         this.endingLocation = endingLocation
     }
     blocksTravelled(){
-        
+        debugger;
+    //PseudoCode:    
+        // return (horizantalBegin - horizontalEnd) + (verticalBegin - verticalEnd) -- Abs. Value
+        let horizantalDiff = Math.abs(this.beginningLocation.horizontal - this.endingLocation.horizontal)
+        let verticalDiff = Math.abs(this.beginningLocation.vertical - this.endingLocation.vertical)
+        return horizantalDiff + verticalDiff
     }
 }
 
 
-driver = new Driver('Alfie', 'Jan 1, 1995');
-driver.yearsExperienceFromBeginningOf(2017);
+let route = new Route(
+    { horizontal: '1st Avenue', vertical: '34' },
+    { horizontal: 'Park', vertical: '34' }
+  );
+route.blocksTravelled()
