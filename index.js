@@ -5,9 +5,7 @@ class Driver{
   }
 
   yearsExperienceFromBeginningOf(year){
-    let endDate = new Date(year, 1, 1)
-    let totalYears = (endDate - this.startDate)/(365 * 24 * 60 * 60 * 1000)
-    return parseInt(totalYears)
+    return year - this.startDate.getFullYear()
   }
 }
 
@@ -32,7 +30,7 @@ class Route {
   blocksTravelled(){
     let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal)
     let verticalDistance = this.endingLocation.vertical - this.beginningLocation.vertical
-    return Math.abs(horizontalDistance) + Math.abs(verticalDistance)
+    return horizontalDistance + verticalDistance
   }
 
   estimatedTime(peak){
